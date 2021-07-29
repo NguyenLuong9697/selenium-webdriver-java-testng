@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Web">
+	<!--<parameter name="url" value="http://live.demoguru99.com/"/> -->
+	<!-- chạy theo class
+	  <test name="Test">
+	   <classes>
+	      <class name="testng.Topic_01_Anatations"/>
+	      <class name="testng.Topic_02_Assertion"/>
+	    </classes> 
+	  </test>
+	 -->  
+	<!-- chạy Tc theo package-->
+	<!-- 
+	<groups>
+	    <run>
+	    	<include name="api"/>
+	    	<include name="web"/>
+	    </run>
+	    
+	</groups>
+	
+	<test name="Test">
+	   <packages>
+	   		<package name="api.application"/>
+	   		<package name="web.application"/>
+	   		<package name="mobile.application"/>
+	   </packages>
+   
+   </test> 
+   -->
+   <!-- chay tren nhieu trinh duyet-->
+   <test name="Run on Firefox">
+   <!-- lấy đc browser nao chạy thì sử dụng parameter trong Test NG-->
+   		<parameter name="browser" value="Firefox"/>
+		   <classes>
+			    <!-- <class name="testng.Topic_05_Parameter"/>-->  
+		      <class name="testng.Topic_06_Optional"/>
+		   </classes> 
+   </test>
+   <!-- <test name="Run on Chorme">
+   		<parameter name="browser" value="Chrome"/>
+		   <classes>
+			      <class name="testng.Topic_05_Parameter"/>
+			      
+		   </classes> 
+   </test>
+   <test name="Run on Opera">
+   		<parameter name="browser" value="Opera"/>
+		   <classes>
+			      <class name="testng.Topic_05_Parameter"/>
+			      
+		   </classes> 
+   </test>
+   -->
+</suite> <!-- Suite -->

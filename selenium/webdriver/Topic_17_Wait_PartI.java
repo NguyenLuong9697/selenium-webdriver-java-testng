@@ -30,7 +30,7 @@ public void beforeClass() {
 	driver.manage().window().maximize();
 }
 
-@Test
+//@Test
 public void TC_01_visible() {
 	//Điều kiện bắt buộc: phải có trong DOM & hiển thị trên UI
 	
@@ -41,7 +41,7 @@ public void TC_01_visible() {
 	Assert.assertTrue(driver.findElement(By.xpath("//input[@id='email']")).isDisplayed());
 }
 
-@Test
+//@Test
 public void TC_02_Invisible() {
 	//Điều kiện bắt buộc: không hiển thị trên UI
 	//Điều kiện k bắt buộc :có trong DOM or k có trong DOM
@@ -63,7 +63,7 @@ public void TC_02_Invisible() {
 	
 }
 
-@Test
+//@Test
 public void TC_03_Presence() {
 	//Điều kiện bắt buộc: phai có trong DOM
 	//Điều kiện k bắt buộc: hiển thị trên UI or k hiển thị trên UI
@@ -94,11 +94,13 @@ public void TC_04_Staleness() {
 	driver.findElement(By.xpath("//a[text()='Tạo tài khoản mới']")).click();
 	explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='reg_box']")));
 	WebElement form=driver.findElement(By.xpath("//div[@id='reg_box']"));
+	WebElement email=driver.findElement(By.xpath("//input[@name='reg_email__']"));
 	//wait cho button Close có thể click được
 	explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Đăng ký']/parent::div/preceding-sibling::img")));
 	//close form
 	driver.findElement(By.xpath("//div[text()='Đăng ký']/parent::div/preceding-sibling::img")).click();
 	explicitWait.until(ExpectedConditions.stalenessOf(form));
+	explicitWait.until(ExpectedConditions.stalenessOf(email));
 }
 @AfterClass
 public void afterClass() {

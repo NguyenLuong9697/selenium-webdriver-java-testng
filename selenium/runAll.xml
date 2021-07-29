@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+	<suite-files>
+		<suite-file  path="runOnAPI.xml"/>
+		<suite-file  path="runOnMobile.xml"/>
+		<suite-file  path="runOnWebApp.xml"/>
+	</suite-files>
+</suite> <!-- Suite -->
