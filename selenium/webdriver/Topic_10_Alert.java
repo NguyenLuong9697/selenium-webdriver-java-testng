@@ -34,10 +34,10 @@ public void beforeClass() {
 public void TC_01_AcceptAlert() {
 	driver.get("https://automationfc.github.io/basic-form/index.html");
 	sleepInSecond(3);
-	//click button Click for JS Alert
+	// click button Click for JS Alert
 	driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
-	//wait cho alert xuất hiện
-	alert=explicitWait.until(ExpectedConditions.alertIsPresent());
+	// wait cho alert xuất hiện
+	alert = explicitWait.until(ExpectedConditions.alertIsPresent());
 	sleepInSecond(5);
 	//verify message của alert
 	Assert.assertEquals(alert.getText(), "I am a JS Alert");

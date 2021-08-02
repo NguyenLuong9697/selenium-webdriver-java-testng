@@ -54,7 +54,7 @@ public void beforeClass() {
 	
 }
 @Test
-public void TC_01_HoverToElement_1() {
+public void TC_01_Double_Click() {
 	driver.get("https://automationfc.github.io/basic-form/index.html");
 	sleepInSecond(3);
 	action.doubleClick(driver.findElement(By.xpath("//button[text()='Double click me']"))).perform();
