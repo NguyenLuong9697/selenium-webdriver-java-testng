@@ -69,6 +69,8 @@ public void TC_01_Button() {
 	
 }
 
+//defaut checbox, default radio button: thẻ input đc visible
+//nc lai nó là custom checkbox , custom default radio button
 @Test
 public void TC_02_DefaultCheckbox() {
 	//open page
@@ -131,6 +133,7 @@ public void TC_03_DefaultRadio() {
 	Assert.assertFalse(driver.findElement(radio_103kW).isSelected());
 	Assert.assertTrue(driver.findElement(radio_118kW).isSelected());
 }
+//chỉ thẻ input ms check isSelected hay chưa nên khi là custom radio dùng javaScript để click
 @Test
 public void TC_04_CustomRadio() {
 	//open page

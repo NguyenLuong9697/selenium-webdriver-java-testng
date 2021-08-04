@@ -168,6 +168,7 @@ public void enterAndTabItemInCustomDropDownEditable(String textbox,  String expe
 	//send key
 	driver.findElement(By.xpath(textbox)).clear();
 	driver.findElement(By.xpath(textbox)).sendKeys(expected);
+	
 	sleepInSecond(3);
 	driver.findElement(By.xpath(textbox)).sendKeys(Keys.TAB);
 }

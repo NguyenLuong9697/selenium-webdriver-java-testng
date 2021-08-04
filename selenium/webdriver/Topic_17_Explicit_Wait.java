@@ -41,7 +41,7 @@ public void beforeClass() {
 	jsExecutor=(JavascriptExecutor)driver;
 }
 
-@Test
+//@Test
 public void TC_01_Explicit_3s_Invisible() {
 	explicitWait=new WebDriverWait(driver,3);
 	driver.get("http://the-internet.herokuapp.com/dynamic_loading/2");
@@ -53,7 +53,7 @@ public void TC_01_Explicit_3s_Invisible() {
 	
 }
 
-@Test
+//@Test
 public void TC_02_Explicit_6s_Invisible() {
 	explicitWait=new WebDriverWait(driver,6);
 	driver.get("http://the-internet.herokuapp.com/dynamic_loading/2");
@@ -64,7 +64,7 @@ public void TC_02_Explicit_6s_Invisible() {
 	Assert.assertEquals(driver.findElement(helloWord).getText(),"Hello World!");
 }
 
-@Test
+//@Test
 public void TC_03_3s_Visible() {
 	explicitWait=new WebDriverWait(driver,3);
 	driver.get("http://the-internet.herokuapp.com/dynamic_loading/2");
@@ -74,7 +74,7 @@ public void TC_03_3s_Visible() {
 	explicitWait.until(ExpectedConditions.visibilityOfElementLocated(helloWord));
 	Assert.assertEquals(driver.findElement(helloWord).getText(),"Hello World!");
 }
-@Test
+//@Test
 public void TC_04_6s_Visible() {
 	explicitWait=new WebDriverWait(driver,6);
 	driver.get("http://the-internet.herokuapp.com/dynamic_loading/2");
@@ -84,7 +84,7 @@ public void TC_04_6s_Visible() {
 	explicitWait.until(ExpectedConditions.visibilityOfElementLocated(helloWord));
 	Assert.assertEquals(driver.findElement(helloWord).getText(),"Hello World!");
 }
-@Test
+//@Test
 public void TC_05_Explicit_Ajax() {
 	explicitWait=new WebDriverWait(driver,15);
 	driver.get("https://demos.telerik.com/aspnet-ajax/ajaxloadingpanel/functionality/explicit-show-hide/defaultcs.aspx");
@@ -120,7 +120,9 @@ public void TC_06_Upload() {
 	explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='rowUploadProgress-selectServer']")));
 	
 	//cho den khi lable Capture1.JPG, Capture2.JPG, Capture3.JPG xuat hien
-	explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.progress")));
+	//explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.progress")));
+	//cho cho progressbar an di
+	explicitWait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(By.cssSelector("div.progress"))));
 	explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.text-center>i.fa-spinner")));
 	explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[text()='Your files have been successfully uploaded']")));
 	Assert.assertTrue(driver.findElement(By.xpath("//h5[text()='Your files have been successfully uploaded']")).isDisplayed());

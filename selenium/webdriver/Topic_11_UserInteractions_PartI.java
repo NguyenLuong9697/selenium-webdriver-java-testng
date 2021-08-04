@@ -115,6 +115,7 @@ public void TC_06_ClickAndHold_Random() {
 	sleepInSecond(3);*/
 	//cách 3
 	//Nhấn Control
+	
 	action.keyDown(Keys.CONTROL).perform();
 	//chọn elemnt 1, 3, 6, 7, 12
 	action.click(listItem.get(0))
