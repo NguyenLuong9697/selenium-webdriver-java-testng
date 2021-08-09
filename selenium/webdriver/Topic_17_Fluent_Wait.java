@@ -63,6 +63,7 @@ public void TC_03(){
 	
 	//Assert.assertTrue(isElementDisplayed(By.xpath("//input[@name='reg_email_confirmation__']")));
 	Assert.assertTrue(isElementNotDisplayed(By.xpath("//input[@name='reg_email_confirmation__']")));
+	
 	//waitElement(By.xpath("//input[@name='reg_email_confirmation__']"));
 }
 @Test
@@ -75,7 +76,8 @@ public void TC_04() {
 	driver.findElement(By.cssSelector("#txtPassword")).sendKeys("admin123");
 	driver.findElement(By.xpath("//input[@id='btnLogin']")).click();
 	//cho trang dc load
-	Assert.assertTrue(isJQueryLoadSuccess(/*driver*/));
+	//Assert.assertTrue(isJQueryLoadSuccess(/*driver*/));
+	isJQueryLoadSuccess(/*driver*/);
 	Assert.assertTrue(driver.findElement(By.xpath("//tr[@class='total']//span[text()='3 month(s)']")).isDisplayed());
 	driver.findElement(By.cssSelector("a#menu_pim_viewPimModule")).click();
 	//chờ cho trang đc load

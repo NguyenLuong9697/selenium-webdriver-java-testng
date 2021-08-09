@@ -17,10 +17,11 @@ public class Topic_01_DataType {
 		//Color color = Color.fromString(rgba);
 		//System.out.println("hex value = " + color.asHex());
 		
-		String projectPath=System.getProperty("user.dir");
-		System.out.println(projectPath); 
-		System.out.println(projectPath+"\\browserDriver\\chromedriver.exe");
-		
+//		String projectPath=System.getProperty("user.dir");
+//		System.out.println(projectPath); 
+//		System.out.println(projectPath+"\\browserDriver\\chromedriver.exe");
+		String separator = System.getProperty("file.separator");
+		System.out.println(separator);
 		//PrintTime();
 	}
 	public static int RandomNumber() {
